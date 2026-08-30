@@ -23,8 +23,8 @@ enum HocLuc
 }
 internal class BTVNbuoi3
 {
-  
-    public static void Main()
+
+    public static void Main3()
     {
         Console.OutputEncoding = System.Text.Encoding.UTF8;
         Console.InputEncoding = System.Text.Encoding.UTF8;
@@ -60,19 +60,19 @@ internal class BTVNbuoi3
                 int c = b - a;
                 double T = 0;
                 if (c < 50)
-                    {
+                {
                     T = c * 1.806;
-                    }
+                }
                 else if (c < 100)
-                    {
+                {
                     T = 50 * 1.806 + (c - 50) * 1.866;
                 }
                 else if (c < 200)
-                    {
+                {
                     T = 50 * 1.806 + 50 * 1.866 + (c - 100) * 2.167;
                 }
                 else if (c < 300)
-                    {
+                {
                     T = 50 * 1.806 + 50 * 1.866 + 100 * 2.167 + (c - 200) * 2.729;
                 }
                 else
@@ -81,15 +81,15 @@ internal class BTVNbuoi3
                 }
                 Console.WriteLine($"So dien tieu thu: {c}");
                 Console.WriteLine($"Tien dien chua thue: {T:F5}");
-                Console.WriteLine($"Thue Vat: {T*0.08:F5}");
+                Console.WriteLine($"Thue Vat: {T * 0.08:F5}");
                 Console.WriteLine($"Tong thanh toan: {T * 1.08:F5}");
             }
             else
             {
                 return;
             }
-            
-            
+
+
         }
         static void bai2()
         {
@@ -103,19 +103,19 @@ internal class BTVNbuoi3
             float b = float.Parse(Console.ReadLine());
             double BMI = a / Math.Pow(b, 2);
             string c = "";
-            if (BMI<18.5)
+            if (BMI < 18.5)
             {
                 c = "Gay (Thieu can)";
-            }    
-            else if (BMI<23)
+            }
+            else if (BMI < 23)
             {
                 c = "Binh thuong (Ly tuong)";
             }
-            else if (BMI<25)
+            else if (BMI < 25)
             {
                 c = "Thua can (Tien beo phi";
             }
-            else 
+            else
             {
                 c = "Beo phi";
             }
@@ -143,7 +143,7 @@ internal class BTVNbuoi3
                 case CurrencyType.USD:
                     tygia = 25400m;
                     ten = "USD";
-                    break; 
+                    break;
 
                 case CurrencyType.EUR:
                     tygia = 27200m;
@@ -163,7 +163,7 @@ internal class BTVNbuoi3
                     Console.WriteLine("Lua chon khong hop le");
                     return;
             }
-            Console.WriteLine($"Phi dich vu: {a*0.005m:F3}");
+            Console.WriteLine($"Phi dich vu: {a * 0.005m:F3}");
             Console.WriteLine($"So tien VNĐ thuc te doi: {a * 0.995m:F3}");
             Console.WriteLine($"So tien {ten} nhan duoc: {a / tygia:F3}");
         }
@@ -208,7 +208,7 @@ internal class BTVNbuoi3
                 // Xử lý khi người dùng nhập sai định dạng
                 Console.WriteLine("Loi: Dinh dang ngay sinh ko hop le. Vui long nhap theo chuan dd/MM/yyyy.");
             }
-        }   
+        }
         static void bai5()
         {
             //Bài 5: Quản Lý Điểm Học Phần & Quy Đổi Thang Điểm GPA(4.0)
@@ -229,13 +229,13 @@ internal class BTVNbuoi3
             if (tcCsharp < 0 || tcCsharp > 4 || diemCsharp < 0 || diemCsharp > 10 || tcToan < 0 || tcToan > 4 || diemToan < 0 || diemToan > 10 || tcTA < 0 || tcTA > 4 || diemTA < 0 || diemTA > 10)
             {
                 Console.WriteLine("Loi: Điem phai tu 0-10 va tin chi tu 0-4. Vui long chay lai!");
-                return; 
+                return;
             }
             int tongtinchi = tcCsharp + tcToan + tcTA;
             double diemTB10 = (diemCsharp * tcCsharp + diemToan * tcToan + diemTA * tcTA) / tongtinchi;
             string diemChu = "";
             double diemGPA = 0;
-            HocLuc xepLoai; 
+            HocLuc xepLoai;
             if (diemTB10 >= 8.5)
             {
                 diemChu = "A"; diemGPA = 4.0; xepLoai = HocLuc.XuatSac;
@@ -259,7 +259,7 @@ internal class BTVNbuoi3
             Console.WriteLine($"Diem TB thang 10: {diemTB10:F2}");
             Console.WriteLine($"Diem chu quy doi: {diemChu}");
             Console.WriteLine($"Diem GPA thang 4: {diemGPA:F1}");
-            Console.WriteLine($"Xep loai hoc luc: {xepLoai}"); 
+            Console.WriteLine($"Xep loai hoc luc: {xepLoai}");
         }
         static void bai6()
         {
@@ -333,7 +333,7 @@ internal class BTVNbuoi3
             if (InputOtp.Length != 6 || !int.TryParse(InputOtp, out _))
             {
                 Console.WriteLine("Trang thai xac thuc: LOI - Dinh dang OTP khong hop le (Phai bao gom 6 chu so).");
-                return; 
+                return;
             }
             if (InputOtp != Otp)
             {
@@ -348,3 +348,5 @@ internal class BTVNbuoi3
             }
             Console.WriteLine("Trang thai xac thuc: THANH CONG - Giao dich da duoc phe duyet.");
         }
+
+        {

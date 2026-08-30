@@ -1,8 +1,8 @@
-using System;
+﻿namespace Bai_tap_cslt_Nguyenphu.Session_4;
 
-class Bai3
+class BAI3
 {
-    public static void Main()
+    public static void Main(string[] args)
     {
         Bai1();
         // Bai2();
@@ -11,7 +11,7 @@ class Bai3
     }
 
     // Write a C# program to check whether a number is even or odd.
-    public static void Bai1()
+    static void Bai1()
     {
         Console.WriteLine("Enter a number:");
         int n = int.Parse(Console.ReadLine());
@@ -27,7 +27,7 @@ class Bai3
     }
 
     // Write a C# program to find the largest number among three numbers.
-    public static void Bai2()
+    static void Bai2()
     {
         Console.WriteLine("Enter a:");
         int a = int.Parse(Console.ReadLine());
@@ -53,7 +53,7 @@ class Bai3
     }
 
     // Write a C# program to check whether a triangle is equilateral, isosceles or scalene.
-    public static void Bai3()
+    static void Bai3()
     {
         Console.WriteLine("Enter side a:");
         int a = int.Parse(Console.ReadLine());
@@ -83,7 +83,7 @@ class Bai3
     }
 
     // Write a C# program to determine which quadrant a point (x, y) lies in.
-    public static void Bai4()
+    static void Bai4()
     {
         Console.WriteLine("Enter x:");
         int x = int.Parse(Console.ReadLine());
@@ -114,6 +114,52 @@ class Bai3
         else
         {
             Console.WriteLine("The point is on an axis.");
+        }
+    }
+    static void GiaiPT()
+    {
+        Console.WriteLine("Nhap so a");
+        float a = float.Parse(Console.ReadLine());
+        Console.WriteLine("Nhap so b");
+        float b = float.Parse(Console.ReadLine());
+        Console.WriteLine("Nhap so c");
+        float c = float.Parse(Console.ReadLine());
+        if (a == 0)
+        {
+            if (b == 0)
+            {
+                if (c == 0)
+                {
+                    Console.WriteLine("vo so nghiem");
+                }
+                else
+                {
+                    Console.WriteLine("vo nghiem");
+                }
+            }
+            else
+            {
+                float x = -c / b;
+                Console.WriteLine($"Nghiem la x = {x}");
+            }
+        }
+        else
+        {
+            float delta = (float)Math.Pow(b, 2) - 4 * a * c;
+            if (delta < 0)
+            {
+                Console.WriteLine("Phuong trinh vo nghiem");
+            }
+            else if (delta == 0)
+            {
+                Console.WriteLine($"Phuong trinh co nghiem kep x={-b / 2 * a}");
+            }
+            else
+            {
+                float Squrt = (float)Math.Sqrt(delta);
+                Console.WriteLine($"Phuong trinh co 2 nghiem");
+                Console.WriteLine($"x1= {-(b + Squrt) / 2 * a}, {-(b + Squrt) / 2 * a}");
+            }
         }
     }
 }

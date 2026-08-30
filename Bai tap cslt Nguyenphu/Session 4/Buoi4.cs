@@ -9,7 +9,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_4
 {
     internal class Buoi4
     {
-        public static void Main(string[] args)
+        public static void Main1(string[] args)
         {
 
 
