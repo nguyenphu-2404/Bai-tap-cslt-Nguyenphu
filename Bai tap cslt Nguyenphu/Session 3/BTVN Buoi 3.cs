@@ -348,5 +348,5 @@ internal class BTVNbuoi3
             }
             Console.WriteLine("Trang thai xac thuc: THANH CONG - Giao dich da duoc phe duyet.");
         }
-
-        {
+    }
+}

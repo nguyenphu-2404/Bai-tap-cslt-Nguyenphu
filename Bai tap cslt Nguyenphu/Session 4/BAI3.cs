@@ -1,6 +1,13 @@
-﻿namespace Bai_tap_cslt_Nguyenphu.Session_4;
+﻿using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Runtime.ConstrainedExecution;
+using System.Security.Cryptography;
+using System.Text;
 
-class BAI3
+namespace Bai_tap_cslt_Nguyenphu.Session_4;
+
+    internal class BAI3
 {
     public static void Main(string[] args)
     {
