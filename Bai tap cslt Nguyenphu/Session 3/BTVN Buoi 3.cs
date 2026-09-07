@@ -205,7 +205,6 @@ internal class BTVNbuoi3
             }
             else
             {
-                // Xử lý khi người dùng nhập sai định dạng
                 Console.WriteLine("Loi: Dinh dang ngay sinh ko hop le. Vui long nhap theo chuan dd/MM/yyyy.");
             }
         }
@@ -327,9 +326,6 @@ internal class BTVNbuoi3
             Console.Write("Thoi gian troi qua: ");
             int tgtroi = int.Parse(Console.ReadLine());
             DateTime Time = tgtao.AddSeconds(tgtroi);
-            // Lớp 1: Kiểm tra định dạng (Đúng 6 ký tự VÀ toàn bộ phải là số)
-            // Lệnh int.TryParse(..., out _) sẽ kiểm tra xem chuỗi có ép thành số được không. 
-            // Ký hiệu "out _" nghĩa là ta chỉ cần biết kết quả Đúng/Sai chứ không cần lưu lại giá trị số đó.
             if (InputOtp.Length != 6 || !int.TryParse(InputOtp, out _))
             {
                 Console.WriteLine("Trang thai xac thuc: LOI - Dinh dang OTP khong hop le (Phai bao gom 6 chu so).");
