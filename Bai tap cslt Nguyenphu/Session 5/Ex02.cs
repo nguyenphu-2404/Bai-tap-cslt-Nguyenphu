@@ -11,7 +11,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_5
     {
         public static void Main(string[] args)
         {
-            Bai6();
+            Bai7();
         }
         static void Bai1()
         {
@@ -134,7 +134,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_5
             double sum = 0;
             for (int i = 1; i <= n; i++)
             {
-                sum += 1 / i;
+                sum += 1.0 / i;
                 Console.Write($"1/{i}");
                 if (i < n)
                     Console.Write(" + ");
@@ -147,10 +147,10 @@ namespace Bai_tap_cslt_Nguyenphu.Session_5
             //Write a program to find the ‘perfect’ numbers within a given number
             //range.
             Console.Write("Nhap range tren");
-            int a=int.Parse(Console.ReadLine());
+            int b=int.Parse(Console.ReadLine());
             Console.Write("Nhap range duoi");
-            double b = int.Parse(Console.ReadLine());
-            Console.Write($"Cac so hoan hao trong khoang {a} va {b}");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write($"Cac so hoan hao trong khoang {a} va {b} la ");
             for (int i = a; i<=b; i++)
             {
                 int sum = 0;
@@ -172,6 +172,35 @@ namespace Bai_tap_cslt_Nguyenphu.Session_5
 
 
         }
+        static void Bai7()
+        {
+            //Write a program to determine whether a given number is prime or not.
+            Console.Write("Nhap mot so: ");
+            int.TryParse(Console.ReadLine(), out int number);
+             if (IsPrime(number))
+             {
+                Console.WriteLine($"{number} la so nguyen to.");
+             }
+             else
+             {
+                Console.WriteLine($"{number} khong phai la so nguyen to.");
+             }
+            static bool IsPrime(int n)
+            {
+                if (n <= 1) return false;
+                if (n == 2) return true;
+                if (n % 2 == 0) return false; 
+                for (int i = 3; i <= Math.Sqrt(n); i += 2)
+                {
+                    if (n % i == 0)
+                        return false;
+                }
+
+                return true;
+            }
+        }
     }
+
+    
 
 }
