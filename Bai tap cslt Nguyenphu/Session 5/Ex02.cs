@@ -9,7 +9,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_5
 {
     internal class Ex02
     {
-        public static void Main(string[] args)
+        public static void Main4(string[] args)
         {
             Bai7();
         }
