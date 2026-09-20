@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
+using System.Data;
 using System.Diagnostics.CodeAnalysis;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
 namespace Bai_tap_cslt_Nguyenphu.Session_6
@@ -83,9 +85,16 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             Console.Write($"Nhiet do theo do F {CelciusToFarenheit(c)} F ");*/
             /*int[] arr = { 9, 8, 7, 6, 2, 50, 1, 3 };
             Console.Write($"Min cua mang la {TimMin(arr)}");*/
-            Console.Write("Nhap so: ");
+            /*Console.Write("Nhap so: ");
             int n= int.Parse(Console.ReadLine());
-            Console.Write($"Tong cua cac so la: {TongCacChuSo(n)}");
+            Console.Write($"Tong cua cac so la: {TongCacChuSo(n)}");*/
+            /*int[] arr = { 1, 2, 5, 8, 7, 6 };
+            SapXepMang(arr);*/
+            /*Console.Write("Nhap chuoi: ");
+            string s= Console.ReadLine();
+            Console.Write($"Chuoi khong trung lap la: {XoaTrungLap(s)}");*/
+            Console.Write("Nhap a: ");
+            int a = int.Parse
 
 
 
@@ -243,7 +252,51 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             }
             return(sum);
         }
+        public static void SapXepMang(int[] arr)
+        {
+            for (int i = 0; i < arr.Length - 1; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        int temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+            }
 
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
+            
+        }
+        public static string XoaTrungLap(string s)
+        {
+            string chuoitam = "";
+
+            for (int i = 0; i < s.Length; i++)
+            {
+                if (!chuoitam.Contains(s[i]))
+                {
+                    chuoitam += s[i];
+                }
+            }
+            return(chuoitam);
+        }
+        public static int UCLN(int a, int b)
+        {
+            while (b != 0)
+            {
+                int temp = b;
+                b = a % b;
+                a = temp;
+            }
+
+            return a;
+        }
     }
 
 }
