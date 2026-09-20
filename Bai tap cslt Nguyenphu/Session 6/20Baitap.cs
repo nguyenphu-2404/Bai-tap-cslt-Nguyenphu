@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.Design;
 using System.Data;
@@ -31,12 +32,15 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
              Console.Write("Nhap so thu ba");
              int c = int.Parse(Console.ReadLine());
              Console.Write($"So lon nhat la {(TimMax(a, b, c))}"); */
+
             /* Console.WriteLine("Nhap so");
             int n = int.Parse(Console.ReadLine()); 
              Console.WriteLine($"Giai thua cua {n} la {TinhGiaithua( n)} ");*/
+
             /*Console.Write("Insert chuoi: ");
             string input = Console.ReadLine();
             Console.Write($"Chuoi moi la {DaoNguocChuoi(input)}");*/
+
             /*Console.Write("Nhap so: ");
             int e = int.Parse(Console.ReadLine());
             if (IsPrime(e))
@@ -47,18 +51,23 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             {
                 Console.WriteLine($"{e} khong phai la so nguyen to.");
             }*/
+
+
             /*Console.Write("Nhap so n: ");
             int n = int.Parse(Console.ReadLine());
             Console.Write($"Day Fibonacci la: ");
             InFibonacci(n);*/
+
             /*Console.Write("Nhap chuoi: ");
             string s = Console.ReadLine();
             Console.Write($"Chuoi co {DemNguyenAm(s)} nguyen am");*/
+
             /*Console.Write("Nhap so x: ");
             double x = double.Parse(Console.ReadLine());
             Console.Write("Nhap so y: ");
             int y = int.Parse(Console.ReadLine());
             Console.Write($"Ket qua x mu y la {Tinhluythua(x, y)}");*/
+
             /*Console.Write("Nhap so luong phan tu: ");
             int n = int.Parse(Console.ReadLine());
 
@@ -70,6 +79,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
                 arr[i] = int.Parse(Console.ReadLine());
             }
             Console.Write($"Trung binh la {Tinhtrungbinh(arr)}  ");*/
+
             /*Console.Write("Nhap chuoi de kiem tra: ");
             string s = Console.ReadLine();
             if(KiemTraDoiXung(s) == true)
@@ -80,21 +90,50 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             {
                 Console.Write(false);
             }*/
+
             /*Console.Write("Nhiet do theo do C la: ");
             double c = double.Parse(Console.ReadLine());
             Console.Write($"Nhiet do theo do F {CelciusToFarenheit(c)} F ");*/
+
             /*int[] arr = { 9, 8, 7, 6, 2, 50, 1, 3 };
             Console.Write($"Min cua mang la {TimMin(arr)}");*/
+
             /*Console.Write("Nhap so: ");
             int n= int.Parse(Console.ReadLine());
             Console.Write($"Tong cua cac so la: {TongCacChuSo(n)}");*/
+
             /*int[] arr = { 1, 2, 5, 8, 7, 6 };
             SapXepMang(arr);*/
+
             /*Console.Write("Nhap chuoi: ");
             string s= Console.ReadLine();
             Console.Write($"Chuoi khong trung lap la: {XoaTrungLap(s)}");*/
-            Console.Write("Nhap a: ");
-            int a = int.Parse
+
+            /*Console.Write("Nhap a: ");
+            int a = int.Parse(Console.ReadLine());
+            Console.Write("Nhap b: ");
+            int b = int.Parse(Console.ReadLine());
+            Console.Write($"UCLN cua {a} va {b} la: {UCLN(a,b)}");*/
+
+            /*Console.Write("Nhap so: ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write($"Decimal to Binary = {DecimalToBinary(n)}");*/
+
+            /*Console.Write("Nhap nam: ");
+            int year = int.Parse(Console.ReadLine());
+            if (KiemTraNamNhuan(year) == true)
+            {
+                Console.Write($"Nam {year} la nam nhuan");
+            }
+            else
+            {
+                Console.Write($"Nam {year} khong la nam nhuan");
+            }*/
+
+            Console.Write("Insert cau: ");
+            string sentence = Console.ReadLine();
+            Console.Write($"Cau co {DemSoTu(sentence)} tu");
+
 
 
 
@@ -129,7 +168,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             {
                 giaithua = giaithua * i;
             }
-            return giaithua;    
+            return giaithua;
 
         }
 
@@ -138,7 +177,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             char[] tenmang = input.ToCharArray();
             Array.Reverse(tenmang);
             string chuoimoi = new string(tenmang);
-            return( chuoimoi);
+            return (chuoimoi);
         }
         public static bool IsPrime(int e)
         {
@@ -166,7 +205,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
                 a = b;
                 b = next;
             }
-            
+
         }
         public static int DemNguyenAm(string s)
         {
@@ -190,22 +229,22 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
         public static double Tinhluythua(double x, int y)
         {
             double result = 1;
-            for(int i = 1; i <= y;  i++)
+            for (int i = 1; i <= y; i++)
             {
                 result = result * x;
             }
-            return(result);
+            return (result);
 
         }
         public static double Tinhtrungbinh(int[] arr)
         {
             double sum = 0;
             int soluong = arr.Length;
-            for (int i = 0;i < arr.Length;i++)
+            for (int i = 0; i < arr.Length; i++)
             {
                 sum += arr[i];
             }
-            return (sum / soluong );
+            return (sum / soluong);
         }
         public static bool KiemTraDoiXung(string s)
         {
@@ -224,14 +263,14 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             return (conver);
 
         }
-        public static int TimMin(int[]arr)
+        public static int TimMin(int[] arr)
         {
             int min = arr[0];
-            for(int i = 1; i < arr.Length; i++)
+            for (int i = 1; i < arr.Length; i++)
             {
-                if(arr[i] < min)
+                if (arr[i] < min)
                 {
-                    min=arr[i];
+                    min = arr[i];
                 }
                 else
                 {
@@ -240,17 +279,17 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             }
             return (min);
         }
-        
+
         public static int TongCacChuSo(int n)
-        { 
+        {
             string chuoi = n.ToString();
             char[] tachchuoi = chuoi.ToCharArray();
             int sum = 0;
-            for(int i = 0; i < tachchuoi.Length; i++)
+            for (int i = 0; i < tachchuoi.Length; i++)
             {
                 sum += tachchuoi[i] - '0';
             }
-            return(sum);
+            return (sum);
         }
         public static void SapXepMang(int[] arr)
         {
@@ -271,7 +310,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             {
                 Console.Write(arr[i] + " ");
             }
-            
+
         }
         public static string XoaTrungLap(string s)
         {
@@ -284,7 +323,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
                     chuoitam += s[i];
                 }
             }
-            return(chuoitam);
+            return (chuoitam);
         }
         public static int UCLN(int a, int b)
         {
@@ -296,6 +335,47 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             }
 
             return a;
+
+        }
+        public static string DecimalToBinary(int n)
+        {
+            string kq = "";
+
+            while (n > 0)
+            {
+                int du = n % 2;
+                kq = du + kq;
+                n = n / 2;
+            }
+
+            return kq;
+        }
+        public static bool KiemTraNamNhuan(int year)
+
+        {
+            if (year % 400 == 0)
+                return true;
+
+            if (year % 4 == 0 && year % 100 != 0)
+                return true;
+
+            return false;
+        }
+        public static int DemSoTu(string sentence)
+        {
+            int count = 0;
+
+            for (int i = 0; i < sentence.Length; i++)
+            {
+                switch (sentence[i])
+                {
+                    case ' ':
+
+                        count++;
+                        break;
+                }
+            }
+            return (count + 1);
         }
     }
 
