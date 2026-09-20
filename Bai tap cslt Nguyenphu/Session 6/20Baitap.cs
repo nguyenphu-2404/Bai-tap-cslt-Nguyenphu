@@ -27,9 +27,26 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
              Console.Write("Nhap so thu ba");
              int c = int.Parse(Console.ReadLine());
              Console.Write($"So lon nhat la {(TimMax(a, b, c))}"); */
-           /* Console.WriteLine("Nhap so");
-           int n = int.Parse(Console.ReadLine()); 
-            Console.WriteLine($"Giai thua cua {n} la {TinhGiaithua( n)} ");*/
+            /* Console.WriteLine("Nhap so");
+            int n = int.Parse(Console.ReadLine()); 
+             Console.WriteLine($"Giai thua cua {n} la {TinhGiaithua( n)} ");*/
+            /*Console.Write("Insert chuoi: ");
+            string input = Console.ReadLine();
+            Console.Write($"Chuoi moi la {DaoNguocChuoi(input)}");*/
+            /*Console.Write("Nhap so: ");
+            int e = int.Parse(Console.ReadLine());
+            if (IsPrime(e))
+            {
+                Console.WriteLine($"{e} la so nguyen to.");
+            }
+            else
+            {
+                Console.WriteLine($"{e} khong phai la so nguyen to.");
+            }*/
+            Console.Write("Nhap so n: ");
+            int n = int.Parse(Console.ReadLine());
+            Console.Write($"Day Fibonacci la: ");
+            InFibonacci(n);
         }
         public static int intTinhTong(int a, int b)
         {
@@ -61,9 +78,47 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             {
                 giaithua = giaithua * i;
             }
-            return giaithua;
+            return giaithua;    
 
         }
+
+        public static string DaoNguocChuoi(string input)
+        {
+            char[] tenmang = input.ToCharArray();
+            Array.Reverse(tenmang);
+            string chuoimoi = new string(tenmang);
+            return( chuoimoi);
+        }
+        public static bool IsPrime(int e)
+        {
+            if (e <= 1) return false;
+            if (e == 2) return true;
+            if (e % 2 == 0) return false;
+            for (int i = 3; i <= Math.Sqrt(e); i += 2)
+            {
+                if (e % i == 0)
+                    return false;
+            }
+
+            return true;
+        }
+        public static void InFibonacci(int n)
+        {
+            int a = 0;
+            int b = 1;
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write(a + " ");
+
+                int next = a + b;
+                a = b;
+                b = next;
+            }
+            
+        }
+
+
 
     }
 }
