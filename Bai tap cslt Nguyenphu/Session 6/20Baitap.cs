@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace Bai_tap_cslt_Nguyenphu.Session_6
@@ -43,10 +45,50 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             {
                 Console.WriteLine($"{e} khong phai la so nguyen to.");
             }*/
-            Console.Write("Nhap so n: ");
+            /*Console.Write("Nhap so n: ");
             int n = int.Parse(Console.ReadLine());
             Console.Write($"Day Fibonacci la: ");
-            InFibonacci(n);
+            InFibonacci(n);*/
+            /*Console.Write("Nhap chuoi: ");
+            string s = Console.ReadLine();
+            Console.Write($"Chuoi co {DemNguyenAm(s)} nguyen am");*/
+            /*Console.Write("Nhap so x: ");
+            double x = double.Parse(Console.ReadLine());
+            Console.Write("Nhap so y: ");
+            int y = int.Parse(Console.ReadLine());
+            Console.Write($"Ket qua x mu y la {Tinhluythua(x, y)}");*/
+            /*Console.Write("Nhap so luong phan tu: ");
+            int n = int.Parse(Console.ReadLine());
+
+            int[] arr = new int[n];
+
+            for (int i = 0; i < n; i++)
+            {
+                Console.Write($"arr[{i}] = ");
+                arr[i] = int.Parse(Console.ReadLine());
+            }
+            Console.Write($"Trung binh la {Tinhtrungbinh(arr)}  ");*/
+            /*Console.Write("Nhap chuoi de kiem tra: ");
+            string s = Console.ReadLine();
+            if(KiemTraDoiXung(s) == true)
+            {
+                Console.Write("True");
+            }
+            if (KiemTraDoiXung(s) == false)
+            {
+                Console.Write(false);
+            }*/
+            /*Console.Write("Nhiet do theo do C la: ");
+            double c = double.Parse(Console.ReadLine());
+            Console.Write($"Nhiet do theo do F {CelciusToFarenheit(c)} F ");*/
+            /*int[] arr = { 9, 8, 7, 6, 2, 50, 1, 3 };
+            Console.Write($"Min cua mang la {TimMin(arr)}");*/
+            Console.Write("Nhap so: ");
+            int n= int.Parse(Console.ReadLine());
+            Console.Write($"Tong cua cac so la: {TongCacChuSo(n)}");
+
+
+
         }
         public static int intTinhTong(int a, int b)
         {
@@ -117,8 +159,91 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
             }
             
         }
+        public static int DemNguyenAm(string s)
+        {
+            int count = 0;
 
+            for (int i = 0; i < s.Length; i++)
+            {
+                switch (s[i])
+                {
+                    case 'a':
+                    case 'e':
+                    case 'i':
+                    case 'o':
+                    case 'u':
+                        count++;
+                        break;
+                }
+            }
+            return count;
+        }
+        public static double Tinhluythua(double x, int y)
+        {
+            double result = 1;
+            for(int i = 1; i <= y;  i++)
+            {
+                result = result * x;
+            }
+            return(result);
 
+        }
+        public static double Tinhtrungbinh(int[] arr)
+        {
+            double sum = 0;
+            int soluong = arr.Length;
+            for (int i = 0;i < arr.Length;i++)
+            {
+                sum += arr[i];
+            }
+            return (sum / soluong );
+        }
+        public static bool KiemTraDoiXung(string s)
+        {
+            if (s == DaoNguocChuoi(s))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        public static double CelciusToFarenheit(double c)
+        {
+            double conver = 1.8 * c + 32;
+            return (conver);
+
+        }
+        public static int TimMin(int[]arr)
+        {
+            int min = arr[0];
+            for(int i = 1; i < arr.Length; i++)
+            {
+                if(arr[i] < min)
+                {
+                    min=arr[i];
+                }
+                else
+                {
+                    min = min;
+                }
+            }
+            return (min);
+        }
+        
+        public static int TongCacChuSo(int n)
+        { 
+            string chuoi = n.ToString();
+            char[] tachchuoi = chuoi.ToCharArray();
+            int sum = 0;
+            for(int i = 0; i < tachchuoi.Length; i++)
+            {
+                sum += tachchuoi[i] - '0';
+            }
+            return(sum);
+        }
 
     }
+
 }
