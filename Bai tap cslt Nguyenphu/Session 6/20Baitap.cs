@@ -11,7 +11,7 @@ namespace Bai_tap_cslt_Nguyenphu.Session_6
 {
     internal class _20Baitap
     {
-        public static void Main(string[] args)
+        public static void Main6(string[] args)
         {
             //Console.WriteLine($"{intTinhTong(5, 6)}");
             /* Console.Write("Nhap so");
